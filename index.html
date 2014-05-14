@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+  <title>Game</title>
+  <script type="text/javascript" src="jquery-2.0.2.min.js"></script>
+  <script type="text/javascript" src="basic_tyrannids.js"></script>
+  <script type="text/javascript" src="basic_events.js"></script>
+  <link rel='stylesheet' href='bingocaller.css' />
+</head>
+<body>
+
+  <div id="content">
+    <div id="tyrannid_deck">Tyrannid Deck: <span id="tyrannid_deck_count"></span></div>
+    <div id="tyrannid_discard_pile">Tyrannid Discard: <span id="tyrannid_discard_pile_count"></span>
+      <button id="show_tyrannid_discard" class="draw">Show</button>
+      <button id="hide_tyrannid_discard" class="draw" style="display:none">Hide</button>
+      <div id="tyrannid_discard_contents"><ul></ul></div>
+    </div>
+    <div id="left_blip">Left Blip Pile: <span id="left_blip_cards_remaining"></span></div>
+    <div id="right_blip">Right Blip Pile: <span id="right_blip_cards_remaining"></span></div>
+
+    <div id="left_blip_fill_value">10</div>
+    <div id="right_blip_fill_value">10</div>
+
+    <button id="fill_left_blip" class="draw">Fill Left blips</button>
+    <button id="fill_right_blip" class="draw">Fill Right blips</button>
+    <button id="fill_tyrannid_deck" class="call">Fill Tyrannid deck</button>
+
+    <div id="event_deck">Event Deck: <span id="event_deck_count"></span></div>
+    <div id="event_discard_pile">Event Discard: <span id="event_discard_pile_count"></span>
+      <button id="show_event_discard" class="draw">Show</button>
+      <button id="hide_event_discard" class="draw" style="display:none">Hide</button>
+      <div id="event_discard_contents"><ul></ul></div>
+    </div>
+
+    <div id="last_event_card"></div>
+
+    <button id="fill_event_deck" class="call">Fill Event deck</button>
+    <button id="draw_event" class="call">Draw Event Card</button>
+
+  </div>
+
+<script type="text/javascript">
+
+  Array.prototype.shuffle = function() {
+    var i = this.length, j, temp;
+    if ( i == 0 ) return this;
+    while ( --i ) {
+       j = Math.floor( Math.random() * ( i + 1 ) );
+       temp = this[i];
+       this[i] = this[j];
+       this[j] = temp;
+    }
+    return this;
+  }
+
+
+  $(document).ready(function() {
+    basic_tyrannids.setup();
+    basic_events.setup();
+  });
+
+
+</script>
+</body>
+</html>
