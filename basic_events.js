@@ -585,7 +585,7 @@ var basic_events = {
     $('#event_discard_contents ul').html('');
 
     for ( var i = 0; i < this.event_discard_pile.length; i++ ) {
-      $("#event_discard_contents ul").append('<li>'+this.event_discard_pile[i].name + '</li>');
+      $("#event_discard_contents ul").append('<li title="'+this.event_discard_pile[i].action+'">'+this.event_discard_pile[i].name + '</li>');
     }
 
   },
