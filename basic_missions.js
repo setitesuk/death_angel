@@ -293,6 +293,114 @@ var basic_missions = {
       upon_entering: null,
       activate_control_panel: "Each Space Marine must discard 1 Support Token or roll a die. On a 0, the Space Marine is slain. Then, regardless of the dice rolls, discard all cards from both blip piles."
     }
+  ],
+
+  "3": [
+    {
+      name: "Generatorium",
+      left_blip: 5,
+      right_blip: 5,
+      locations: {
+        left: {
+          1: "Corridor",
+          3: "Dark Corner"
+        },
+        right: {
+          3: "Ventilation Duct",
+          4: "Control Panel"
+        }
+      },
+      upon_entering: null,
+      activate_control_panel: "Roll a die. If you roll SKULL, slay up to 4 Genestealers of your choice (in any positions). Otherwise slay this Space Marine."
+    },
+    {
+      name: "Hibernation Cluster",
+      left_blip: 0,
+      right_blip: 0,
+      locations: {
+        left: {
+          4: "Door",
+          3: "Ventilation Duct"
+        },
+        right: {
+          2: "Spore Chimney",
+          4: "Dark Corner"
+        }
+      },
+      upon_entering: "For each Space Marine in the formation, place 1 Genestealer card into each blip pile from the Genestealer deck.",
+      activate_control_panel: null
+    },
+    {
+      name: "Wrath of Baal Chapel",
+      left_blip: 5,
+      right_blip: 6,
+      locations: {
+        left: {
+          1: "Ventilation Duct",
+          3: "Corridor"
+        },
+        right: {
+          4: "Door",
+          1: "Dark Corner"
+        }
+      },
+      upon_entering: "The current player places the 'Artefact' Terrain card on any position and side of the formation.",
+      activate_control_panel: null
+    }
+  ],
+
+  "4": [
+    {
+      name: "Genestealer Lair",
+      left_blip: 6,
+      right_blip: 5,
+      locations: {
+        left: {
+          2: "Ventilation Duct",
+          1: "Dark Corner"
+        },
+        right: {
+          2: "Corridor",
+          1: "Spore Chimney"
+        }
+      },
+      upon_entering: "Move all swarms to the red Terrain card on their side of the formation. The Spawn 1 Brood Lord on each red Terrain Card. If both Brood Lords are slain, Space Marines win.",
+      activate_control_panel: null
+    },
+    {
+      name: "Launch Control Room",
+      left_blip: 6,
+      right_blip: 6,
+      locations: {
+        left: {
+          1: "Dark Corner",
+          3: "Control Panel"
+        },
+        right: {
+          2: "Ventilation Duct",
+          1: "Corridor"
+        }
+      },
+      upon_entering: null,
+      activate_control_panel: "Place a Support Token on thsi card or roll a die. If the roll is equal or less than the number if Support Tokens on this card, Space Marines win. Otherwise there is no effect."
+    },
+    {
+      name: "Toxin Pumping Station",
+      left_blip: 7,
+      right_blip: 7,
+      locations: {
+        left: {
+          2: "Dark Corner",
+          1: "Corridor"
+        },
+        right: {
+          2: "Control Panel",
+          1: "Ventilation Duct"
+        }
+      },
+      upon_entering: null,
+      activate_control_panel: "Roll a die and discard that many cards from the blip pile of your choice. Space Marines may only win if there are 0 cards in both blip piles and 0 Genestealers in the formation."
+    }
   ]
 
 };
