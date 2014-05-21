@@ -17,11 +17,10 @@ var basic_tyrannids = {
     $('#left_blip_cards_remaining').html( this.left_blip.length );
     $('#right_blip_cards_remaining').html( this.right_blip.length );
 
-    $("#fill_left_blip").click( function () { that.set_left_blip(); } );
-    $("#fill_right_blip").click( function () { that.set_right_blip(); } );
-    $("#fill_tyrannid_deck").click( function () { that.set_tyrannid_deck(); } );
     $("#show_tyrannid_discard").click( function () { that.show_discard(); } );
     $("#hide_tyrannid_discard").click( function () { that.hide_discard(); } );
+    this.set_left_blip();
+    this.set_right_blip();
 
   },
 
