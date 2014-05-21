@@ -46,6 +46,24 @@
     <button id="roll_die" class="call">Roll a die.</button>
 
 
+    <div id="mission_card">
+      <div id="spawn_vals">
+        <p>Spawn Values:
+          <dl>
+            <dt>Yellow:</dt><dd id="yellow_spawn"></dd>
+            <dt>White:<dt><dd id="white_spawn"></dd>
+          </dl>
+        </p>
+      </div>
+      <div id="mission_name"></div>
+      <div id="mission_text"></div>
+    </div>
+
+    <button id="next_mission" class="call">Next Mission</button>
+  </div>
+
+  <div id="formation">
+    <div id="formation_count">6</div>
   </div>
 
 <script type="text/javascript">
@@ -64,6 +82,7 @@
 
 
   $(document).ready(function() {
+    basic_missions.setup();
     basic_tyrannids.setup();
     basic_events.setup();
     die.setup();

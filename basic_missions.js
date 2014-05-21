@@ -1,4 +1,44 @@
 var basic_missions = {
+  
+  void_lock: null,
+  current_mission_level: null,
+  current_mission_card: null,
+
+  setup : function () {
+    var formation_count = $('#formation_count').html();
+console.log(formation_count);
+    formation_count = parseInt( formation_count );
+    this.void_lock = this.void_locks[formation_count];
+    $('#left_blip_fill_value').html( this.void_lock.left_blip );
+    $('#right_blip_fill_value').html( this.void_lock.right_blip );
+    $('#mission_name').html('Void Lock');
+    $('#yellow_spawn').html( this.void_lock.spawn.yellow );
+    $('#white_spawn').html( this.void_lock.spawn.white );
+    this.current_mission_card = this.void_lock;
+    var that = this;
+    $("#next_mission").click( function () { that.get_next_mission(); } );
+  },
+
+  get_next_mission: function () {
+    this.current_mission_level = this.void_lock.location_deck_setup.shift();
+    var mission = this[this.current_mission_level][ Math.floor( Math.random() * this[this.current_mission_level].length ) ];
+    this.current_mission_card = mission;
+console.log(mission);
+    $('#mission_name').html( mission.name );
+    var mission_text = '';
+    if ( mission.upon_entering ) {
+      mission_text += '<p><strong>Upon Entering:</strong> ' + mission.upon_entering + '</p>';
+    }
+    if ( mission.activate_control_panel ){
+      mission_text += '<p><strong>Activate Control Panel:</strong> ' + mission.activate_control_panel + '</p>';
+    }
+    $('#mission_text').html( mission_text );
+    $('#left_blip_fill_value').html( mission.left_blip );
+    $('#right_blip_fill_value').html( mission.right_blip );
+    if ( this.current_mission_level === 4 ) {
+      $('#next_mission').hide();
+    }
+  },
 
   void_locks : {
     6: {
